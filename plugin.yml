@@ -1,0 +1,18 @@
+name: JavaNotepad
+version: 1.0.0
+main: dev.me.Main;
+description: This is example plugin tutorial.
+
+commands:
+  heal:
+    usage: /<command>
+    aliases: [heal, eat]
+  feed:
+    usage: /<command>
+    aliases: [feed]
+  tp:
+    usage: /<command>
+    aliases: [teleport, tp]
+  gamemode:
+    usage: /<command>
+    aliases: [gm, gamemode]

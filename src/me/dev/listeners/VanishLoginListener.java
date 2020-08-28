@@ -24,7 +24,7 @@ public class VanishLoginListener implements Listener {
         }
         if (player.hasPermission("essentials.vanish.seeall")) return;
         for (Player p1 : plugin.getServer().getOnlinePlayers()) {
-            if (plugin.isVanished(p1) && player != p1 && p1 != null) { //`&& p1 != null` shouldn't be necessary. odd.
+            if (plugin.isVanished(p1) && player != p1 && p1 != null) 
                 player.hidePlayer(p1);
             }
         }

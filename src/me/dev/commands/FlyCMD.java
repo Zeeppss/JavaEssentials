@@ -1,36 +1,67 @@
 package me.dev.commands;
 
 import me.dev.Main;
-import org.bukkit.ChatColor;
+import org.bukkit.Bukkit;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 
 public class FlyCMD implements CommandExecutor {
-    private Main plugin;
-
-    public FlyCMD(Main plugin) {
-        this.plugin = plugin;
-        plugin.getCommand("feed").setExecutor(this);
-
+    public FlyCMD() {
     }
 
-    @Override
-    public boolean onCommand(CommandSender sender, Command cmd, String label, String[] args) {
-
-        if (cmd.getName().equalsIgnoreCase("fly")) ;
-        Player p = (Player) sender;
-        if (args.length == 0) {
-            if (p.hasPermission("essentials.fly") && p.isOp()) {
+    public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
+        Player player;
+        if (!(sender instanceof Player)) {
+            if (args.length == 1) {
+                player = Bukkit.getPlayer(args[0]);
+                if (player != null) {
+                    this.toggleFly(player);
+                    sender.sendMessage(Main.pre + "§aFly is now active for §e" + player.getName() + " " + player.getAllowFlight() + "§a.");
+                } else {
+                    sender.sendMessage(Main.pre + "§cPlayer not found!.");
+                }
             }
-            if (p.getAllowFlight() == true) ;
-            p.setAllowFlight(false);
-            p.sendMessage(ChatColor.RED + "Fly has been disabled!");
+
+            sender.sendMessage(Main.pre + "Usage: /fly [player]");
+            return false;
         } else {
-            p.setAllowFlight(true);
-            p.sendMessage(ChatColor.GREEN + "Fly has been enabled!");
+            player = (Player)sender;
+            if (player.hasPermission("essentials.fly")) {
+                if (args.length == 0) {
+                    this.toggleFly(player);
+                } else if (args.length == 1) {
+                    if (player.hasPermission("essentials.fly.other")) {
+                        Player target = Bukkit.getPlayer(args[0]);
+                        if (target != null) {
+                            this.toggleFly(target);
+                            player.sendMessage(Main.pre + "§aFly is now active for §e" + player.getName() + " " + player.getAllowFlight() + "§a.");
+                        } else {
+                            player.sendMessage(Main.pre + "§cPlayer not found!.");
+                        }
+                    } else {
+                        player.sendMessage(Main.pre + "§cYou don't have essentials.fly permissions!.");
+                    }
+                } else {
+                    player.sendMessage(Main.pre + "Usage: /fly [player]");
+                }
+            } else {
+                player.sendMessage(Main.pre + "§cYou don't have essentials.fly.other permissions.");
+            }
+
+            return false;
         }
-        return false;
+    }
+
+    private void toggleFly(Player player) {
+        if (player.getAllowFlight()) {
+            player.setAllowFlight(false);
+            player.sendMessage(Main.pre + "§cFly not active.");
+        } else {
+            player.setAllowFlight(true);
+            player.sendMessage(Main.pre + "§aFly active.");
+        }
+
     }
 }

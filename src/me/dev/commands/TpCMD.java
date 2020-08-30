@@ -9,16 +9,14 @@ import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 
 public class TpCMD implements CommandExecutor {
-    private Main plugin;
-
-    public TpCMD(Main plugin) {
-        this.plugin = plugin;
-        plugin.getCommand("tp").setExecutor(this);
-
+    public TpCMD() {
     }
 
     @Override
     public boolean onCommand(CommandSender sender, Command cmd, String label, String[] args) {
+        if (!(sender instanceof Player)) {
+            sender.sendMessage(Main.pre + " | §cPlayer Only!.");
+        }
 
         Player p = (Player) sender;
         p.sendMessage(cmd.getName() + " has requested to teleport to you.\nType /tpaccept to accept or /tpdecline to decline");

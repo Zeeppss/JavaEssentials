@@ -7,27 +7,28 @@ import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 
 public class FeedCMD implements CommandExecutor {
-    private Main plugin;
-
-    public FeedCMD(Main plugin) {
-        this.plugin = plugin;
-        plugin.getCommand("feed").setExecutor(this);
-
+    public FeedCMD() {
     }
-    @Override
-    public boolean onCommand(CommandSender sender, Command cmd, String label, String[] args) {
 
-        if (cmd.getName().equalsIgnoreCase("feed")) ;
-        Player p = (Player) sender;
-        if (args.length == 0) {
-            if (p.hasPermission("essentials.feed") && p.isOp()) {
-            }
-            p.setFoodLevel(20);
-            p.sendMessage("You has been feed!");
-            return true;
+    public boolean onCommand(CommandSender sender, Command cmd, String label, String[] args) {
+        if (!(sender instanceof Player)) {
+            sender.sendMessage(Main.pre + "§cPlayer Only!");
+            return false;
         } else {
-            p.sendMessage("§cYou are lacking the permission essentials.feed");
+            Player p = (Player)sender;
+            if (p.hasPermission("essentials.feed")) {
+                if (args.length == 0) {
+                    p.setFoodLevel(20);
+                    p.getSaturation();
+                    p.sendMessage(Main.pre + "§aYou has been feed!");
+                } else {
+                    p.sendMessage(Main.pre + "§cUsage: /feed");
+                }
+            } else {
+                p.sendMessage(Main.pre + "§cYou don't have essentials.feed permissions");
+            }
+
+            return false;
         }
-        return true;
     }
 }

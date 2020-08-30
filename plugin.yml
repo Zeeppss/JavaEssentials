@@ -1,18 +1,28 @@
 name: JavaNotepad
-version: 1.0.0
-main: dev.me.Main;
-description: This is example plugin tutorial.
+version: 1.0.5
+main: me.dev.Main
+author: Zeeppss
 
 commands:
-  heal:
-    usage: /<command>
-    aliases: [heal, eat]
+  vanish:
+    description: Make yourself invisible to everyone else!
+  v:
+    description: Make yourself invisible to everyone else!
   feed:
-    usage: /<command>
-    aliases: [feed]
-  tp:
-    usage: /<command>
-    aliases: [teleport, tp]
+    description: Quench your hunger or others.
+  heal:
+    description: Heal yourself or others!
+  gm:
+    description: Put yourself in any X gamemode.
   gamemode:
-    usage: /<command>
-    aliases: [gm, gamemode]
+    description: Put yourself in any X game mode.
+  fly:
+    description: With the command you can fly.
+  cc:
+    description: delete the chat
+  chatclear:
+    description: Delete the chat.
+  rtp:
+    description: Telport yourself RANDOM to the farm world.
+  tp:
+    description: Switch places with orders.

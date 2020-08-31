@@ -5,26 +5,36 @@ author: Zeeppss
 
 commands:
   clearchat:
-    description: Lösche den Chat.
+    description: Delete the chat.
   feed:
-    description: Stille dein oder anderen hunger.
+    description: Satisfy your or other hunger.
   fly:
-    description: Mit dem Command kannst du Fliegen.
+    description: With the command you can fly.
   gamemode:
-    description: Setze dich in einen X belibigen gamemode.
+    description: Put yourself in any X game mode.
   gm:
-    description: Setze dich in einen X belibiegen gamemode.
+    description: Put yourself in any X game mode.
   heal:
-    description: Heile dich oder andere.
-  day:
-    description: Turns the day bright.
-  tp:
-    description: Teleported to player.
-  teleport:
-    description: Teleported to player.
-  broadcast:
-    description: Cheers a text to everyone.
+    description: Heal yourself or others.
   kick:
     description: Kick a player with reason.
   ban:
     description: Banned a player with reason.
+  broadcast:
+    description: Cheers a text to everyone.
+  bc:
+    description: Cheers a text to everyone.
+  afk:
+    description: Afk.
+  ping:
+    description: Check internet fluency.
+  invsee:
+    description: peek at people's inventory.
+  hat:
+    description: Put items on the head.
+  top:
+    decsription: Switch locations.
+  clearinventory:
+    description: Cleared the inventory players.
+  ci:
+    decsription: Cleared the inventory players.

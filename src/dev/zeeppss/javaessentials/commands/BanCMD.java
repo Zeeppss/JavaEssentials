@@ -45,8 +45,10 @@ public class BanCMD implements CommandExecutor {
                     sender.sendMessage(Main.pre + "Successfully banned: " + "§a" + target);
                     return true;
                 }
+            } else {
+                p.sendMessage(Main.pre + "§cYou don't have essentials.ban permissions!");
             }
-            return true;
+            return false;
         }
     }
 }

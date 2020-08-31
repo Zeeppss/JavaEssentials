@@ -1,6 +1,7 @@
 package dev.zeeppss.javaessentials.commands;
 
 import dev.zeeppss.javaessentials.Main;
+import dev.zeeppss.javaessentials.utils.StringUtils;
 import org.bukkit.Bukkit;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
@@ -19,24 +20,15 @@ public class BroadcastCMD implements CommandExecutor {
             Player p = (Player) sender;
             if (p.hasPermission("essentials.broadcast")) {
                 if (args.length == 0) {
-                    if (args.length > 0) {
-                        String broadcast = "";
-                        String[] arrstring = args;
-                        int n = arrstring.length;
-                        int n2 = 0;
-                        while (n2 < n) {
-                            String message = arrstring[n2];
-                            broadcast = (broadcast) + message + " ";
-                            ++n2;
-                        }
-                        Bukkit.getServer().broadcastMessage("§c" + "[" + "§e" + "BROADCAST" + "§c" + "] " + "§a" + broadcast);
-                    }
-                } else {
-                    p.sendMessage(Main.pre + "§cUsage: /broadcast [text]");
+                    sender.sendMessage(Main.pre + "§cUsage: /broadcast [message]");
+                    return true;
                 }
-            } else {
-                p.sendMessage("§cYou don't have essentials.broadcast permissions");
+
+                String message = StringUtils.join(args, " ");
+                Bukkit.broadcastMessage("§e[§aBroadcast§e] " + "§r" + message);
+                return true;
             }
+            p.sendMessage(Main.pre + "§cYou don't have essentials.broadcast permissions!");
         }
         return false;
     }

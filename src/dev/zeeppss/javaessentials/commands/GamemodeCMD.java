@@ -34,7 +34,6 @@ public class GamemodeCMD implements CommandExecutor {
             } else {
                 player.sendMessage(Main.pre + "§cYou don't have essentials.gamemode permissions!");
             }
-
             return false;
         }
     }

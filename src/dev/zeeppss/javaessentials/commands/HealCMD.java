@@ -34,7 +34,6 @@ public class HealCMD implements CommandExecutor {
         } else {
             p.sendMessage(Main.pre + "§cYou don't have essentials.heal permissions");
         }
-
         return false;
     }
 

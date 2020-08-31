@@ -26,7 +26,6 @@ public class FeedCMD implements CommandExecutor {
             } else {
                 p.sendMessage(Main.pre + "§cYou don't have essentials.feed permissions");
             }
-
             return false;
         }
     }

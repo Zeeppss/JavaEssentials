@@ -32,8 +32,13 @@ public class Main extends JavaPlugin {
         this.getCommand("ban").setExecutor(new BanCMD());
         this.getCommand("broadcast").setExecutor(new BroadcastCMD());
         this.getCommand("bc").setExecutor(new BroadcastCMD());
-        this.getCommand("tp").setExecutor(new TpCMD());
-        this.getCommand("teleport").setExecutor(new TpCMD());
+        this.getCommand("afk").setExecutor(new AfkCMD());
+        this.getCommand("ping").setExecutor(new PingCMD());
+        this.getCommand("invsee").setExecutor(new InvseeCMD());
+        this.getCommand("hat").setExecutor(new HatCMD());
+        this.getCommand("top").setExecutor(new TopCMD());
+        this.getCommand("clearinventory").setExecutor(new ClearInventoryCMD());
+        this.getCommand("ci").setExecutor(new ClearInventoryCMD());
         Bukkit.getPluginManager().registerEvents(new GamemodeManager(), this);
         Bukkit.getPluginManager().registerEvents(new JoinEvent(), this);
         Bukkit.getPluginManager().registerEvents(new QuitEvent(), this);

@@ -1,28 +1,30 @@
-name: JavaNotepad
-version: 1.0.5
-main: me.dev.Main
+name: JavaEssentials
+version: 1.0.6
+main: dev.zeeppss.javaessentials.Main
 author: Zeeppss
 
 commands:
-  vanish:
-    description: Make yourself invisible to everyone else!
-  v:
-    description: Make yourself invisible to everyone else!
+  clearchat:
+    description: Lösche den Chat.
   feed:
-    description: Quench your hunger or others.
-  heal:
-    description: Heal yourself or others!
-  gm:
-    description: Put yourself in any X gamemode.
-  gamemode:
-    description: Put yourself in any X game mode.
+    description: Stille dein oder anderen hunger.
   fly:
-    description: With the command you can fly.
-  cc:
-    description: delete the chat
-  chatclear:
-    description: Delete the chat.
-  rtp:
-    description: Telport yourself RANDOM to the farm world.
+    description: Mit dem Command kannst du Fliegen.
+  gamemode:
+    description: Setze dich in einen X belibigen gamemode.
+  gm:
+    description: Setze dich in einen X belibiegen gamemode.
+  heal:
+    description: Heile dich oder andere.
+  day:
+    description: Turns the day bright.
   tp:
-    description: Switch places with orders.
+    description: Teleported to player.
+  teleport:
+    description: Teleported to player.
+  broadcast:
+    description: Cheers a text to everyone.
+  kick:
+    description: Kick a player with reason.
+  ban:
+    description: Banned a player with reason.

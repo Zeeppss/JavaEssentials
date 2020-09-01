@@ -20,7 +20,7 @@ public class ClearChatCMD implements CommandExecutor {
         FileConfiguration var9;
         if (!(sender instanceof Player)) {
             if (args.length == 0) {
-                for(i = 0; i < 99; ++i) {
+                for(i = 0; i < 500; ++i) {
                     Bukkit.broadcastMessage("\n");
                     Bukkit.broadcastMessage(" ");
                 }

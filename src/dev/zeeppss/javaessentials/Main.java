@@ -9,10 +9,12 @@ import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.plugin.java.JavaPlugin;
 
 public class Main extends JavaPlugin {
-    public static String pre = "§6[§bJavaEssentials§6] | ";
+    public static String pre = "§e[§bJavaEssentials§e] | ";
     public static String mbp = "§cPlayer only!";
     public static String np = "§cYou don't have this permissions!";
     FileConfiguration players;
+
+    public static Main instance;
 
     public Main() {
     }
@@ -43,6 +45,11 @@ public class Main extends JavaPlugin {
         this.getCommand("weather").setExecutor(new WeatherCMD());
         this.getCommand("message").setExecutor(new MessageCMD());
         this.getCommand("msg").setExecutor(new MessageCMD());
+        this.getCommand("javaessentials").setExecutor(new JavaEssentialsCMD());
+        this.getCommand("js").setExecutor(new JavaEssentialsCMD());
+        this.getCommand("smite").setExecutor(new SmiteCMD());
+        this.getCommand("lightning").setExecutor(new SmiteCMD());
+        instance = this;
         Bukkit.getPluginManager().registerEvents(new GamemodeManager(), this);
         Bukkit.getPluginManager().registerEvents(new JoinEvent(), this);
         Bukkit.getPluginManager().registerEvents(new QuitEvent(), this);
@@ -54,6 +61,11 @@ public class Main extends JavaPlugin {
         Bukkit.getConsoleSender().sendMessage(pre + " §cPlugin was created by Zeeppss!");
         Bukkit.getConsoleSender().sendMessage(pre + " §7------------------------------------");
     }
+
+    public static Main getInstance() {
+        return instance;
+    }
+
 
     public FileConfiguration getPlayers() {
 

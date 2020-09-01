@@ -38,3 +38,11 @@ commands:
     description: Cleared the inventory players.
   ci:
     decsription: Cleared the inventory players.
+  invecsee:
+    description: Looking at the Enderchest player.
+  weather:
+    description: Changing the weather in the world.
+  message:
+    description: Talking via text online.
+  msg:
+    description: Talking via text online.

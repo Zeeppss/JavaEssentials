@@ -39,6 +39,10 @@ public class Main extends JavaPlugin {
         this.getCommand("top").setExecutor(new TopCMD());
         this.getCommand("clearinventory").setExecutor(new ClearInventoryCMD());
         this.getCommand("ci").setExecutor(new ClearInventoryCMD());
+        this.getCommand("invecsee").setExecutor(new InvEcSeeCMD());
+        this.getCommand("weather").setExecutor(new WeatherCMD());
+        this.getCommand("message").setExecutor(new MessageCMD());
+        this.getCommand("msg").setExecutor(new MessageCMD());
         Bukkit.getPluginManager().registerEvents(new GamemodeManager(), this);
         Bukkit.getPluginManager().registerEvents(new JoinEvent(), this);
         Bukkit.getPluginManager().registerEvents(new QuitEvent(), this);

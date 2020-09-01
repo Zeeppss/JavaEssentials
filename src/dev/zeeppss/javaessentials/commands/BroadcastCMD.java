@@ -27,9 +27,10 @@ public class BroadcastCMD implements CommandExecutor {
                 String message = StringUtils.join(args, " ");
                 Bukkit.broadcastMessage("§e[§aBroadcast§e] " + "§r" + message);
                 return true;
+            } else {
+                p.sendMessage(Main.pre + "§cYou don't have essentials.broadcast permissions!");
             }
-            p.sendMessage(Main.pre + "§cYou don't have essentials.broadcast permissions!");
+            return false;
         }
-        return false;
     }
 }

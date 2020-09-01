@@ -13,8 +13,8 @@ public class ClearInventoryCMD implements CommandExecutor {
     }
 
     public boolean onCommand(CommandSender sender, Command cmd, String label, String[] args) {
-        if (args.length > 2) {
-            sender.sendMessage("Usage: /clear [material]");
+        if (!(sender instanceof Player)) {
+            sender.sendMessage(Main.pre + "§cPlayer only!");
             return false;
         }
         Player p = (Player) sender;
@@ -25,8 +25,9 @@ public class ClearInventoryCMD implements CommandExecutor {
                 i.remove(Material.valueOf(args[0]));
                 return true;
             }
-            p.sendMessage("Clearing inventory");
+            p.sendMessage("§cClearing inventory");
             i.clear();
+            sender.sendMessage(Main.pre + "§cUsage: /clear [material]");
             return false;
         } else {
             p.sendMessage(Main.pre + "§cYou don't have essentials.clearinventory permissions");

@@ -1,5 +1,5 @@
 name: JavaEssentials
-version: 1.0.6
+version: 1.0.8
 main: dev.zeeppss.javaessentials.Main
 author: Zeeppss
 
@@ -46,3 +46,11 @@ commands:
     description: Talking via text online.
   msg:
     description: Talking via text online.
+  javaessentials:
+    description: Plugin info.
+  js:
+    description: Plugin info.
+  smite:
+    description: Give it a smite.
+  lightning:
+    description: Give it a smite.

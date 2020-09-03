@@ -17,7 +17,7 @@ public class HelpCMD implements CommandExecutor {
         } else {
             Player p = (Player) sender;
             if (p.hasPermission("essentials.help")) {
-            p.sendMessage("§8==========§aList your commands:§8========== ");
+            p.sendMessage("§8==========§aList JavaEssentials Commands:§8========== ");
                 p.sendMessage("/§aclearchat §7>> §8[§6essentials.clearchat§8]");
                 p.sendMessage("/§afeed §7>> §8[§6essentials.feed§8]");
                 p.sendMessage("/§afly §7>> §8[§6essentials.fly§8]");
@@ -42,6 +42,11 @@ public class HelpCMD implements CommandExecutor {
                 p.sendMessage("/§asmite §7>> §8[§6essentials.smite§8]");
                 p.sendMessage("/§alightning §7>> §8[§6essentials.smite§8]");
                 p.sendMessage("/§asuicide §7>> §8[§6essentials.suicide§8]");
+                p.sendMessage("§8==========§aList Troll Commands:§8========== ");
+                p.sendMessage("§a/nuke §7>> §8[§6essentials.nuke§8]");
+                p.sendMessage("§a/freeze §7>> §8[§6essentials.freeze§8]");
+                p.sendMessage("§a/banish §7>> §8[§6essentials.banish§8]");
+                p.sendMessage("§a/creeper §7>> §8[§6essentials.creeper§8]");
             } else {
                 p.sendMessage(Main.pre + "§cYou don't have essentials.help permissions!");
             }

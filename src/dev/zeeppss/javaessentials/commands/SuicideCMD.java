@@ -19,6 +19,7 @@ public class SuicideCMD implements CommandExecutor {
             if (p.hasPermission("essentials.suicide")) {
                 if (args.length == 0) {
                     p.damage(20.0D);
+                    p.setHealth(0.00);
                     p.sendMessage(Main.pre + "§cYou have killed yourself!");
                     if (p.getGameMode() == GameMode.CREATIVE) {
                         p.performCommand("kill");

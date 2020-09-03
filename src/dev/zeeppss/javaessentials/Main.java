@@ -1,6 +1,7 @@
 package dev.zeeppss.javaessentials;
 
 import dev.zeeppss.javaessentials.commands.*;
+import dev.zeeppss.javaessentials.commands.trolls.*;
 import dev.zeeppss.javaessentials.listeners.JoinEvent;
 import dev.zeeppss.javaessentials.listeners.QuitEvent;
 import dev.zeeppss.javaessentials.managers.GamemodeManager;
@@ -44,14 +45,16 @@ public class Main extends JavaPlugin {
         this.getCommand("ci").setExecutor(new ClearInventoryCMD());
         this.getCommand("invecsee").setExecutor(new InvEcSeeCMD());
         this.getCommand("weather").setExecutor(new WeatherCMD());
-        this.getCommand("message").setExecutor(new MessageCMD());
-        this.getCommand("msg").setExecutor(new MessageCMD());
         this.getCommand("javaessentials").setExecutor(new JavaEssentialsCMD());
         this.getCommand("js").setExecutor(new JavaEssentialsCMD());
         this.getCommand("smite").setExecutor(new SmiteCMD());
         this.getCommand("lightning").setExecutor(new SmiteCMD());
         this.getCommand("suicide").setExecutor(new SuicideCMD());
         this.getCommand("help").setExecutor(new HelpCMD());
+        this.getCommand("nuke").setExecutor(new NukeCMD());
+        this.getCommand("freeze").setExecutor(new FreezeCMD());
+        this.getCommand("banish").setExecutor(new BanishCMD());
+        this.getCommand("creeper").setExecutor(new CreeperCMD());
         instance = this;
         Bukkit.getPluginManager().registerEvents(new GamemodeManager(), this);
         Bukkit.getPluginManager().registerEvents(new JoinEvent(), this);

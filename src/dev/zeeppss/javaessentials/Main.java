@@ -2,6 +2,7 @@ package dev.zeeppss.javaessentials;
 
 import dev.zeeppss.javaessentials.commands.*;
 import dev.zeeppss.javaessentials.commands.trolls.*;
+import dev.zeeppss.javaessentials.listeners.FreezeEvent;
 import dev.zeeppss.javaessentials.listeners.JoinEvent;
 import dev.zeeppss.javaessentials.listeners.QuitEvent;
 import dev.zeeppss.javaessentials.managers.GamemodeManager;
@@ -59,6 +60,7 @@ public class Main extends JavaPlugin {
         Bukkit.getPluginManager().registerEvents(new GamemodeManager(), this);
         Bukkit.getPluginManager().registerEvents(new JoinEvent(), this);
         Bukkit.getPluginManager().registerEvents(new QuitEvent(), this);
+        Bukkit.getPluginManager().registerEvents(new FreezeEvent(), this);
     }
 
     public void onDisable() {

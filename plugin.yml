@@ -1,5 +1,5 @@
 name: JavaEssentials
-version: 1.0.9
+version: 1.1.0
 main: dev.zeeppss.javaessentials.Main
 author: Zeeppss
 
@@ -42,10 +42,6 @@ commands:
     description: Looking at the Enderchest player.
   weather:
     description: Changing the weather in the world.
-  message:
-    description: Talking via text online.
-  msg:
-    description: Talking via text online.
   javaessentials:
     description: Plugin info.
   js:
@@ -58,3 +54,11 @@ commands:
     description: Kill yourself.
   help:
     description: List Commands.
+  nuke:
+    description: Tnt Rain Troll.
+  freeze:
+    description: Freeze Troll.
+  banish:
+    decsription: Banish Troll.
+  creeper:
+    description: Creeper Troll.

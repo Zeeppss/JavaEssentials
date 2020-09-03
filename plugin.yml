@@ -1,5 +1,5 @@
 name: JavaEssentials
-version: 1.0.8
+version: 1.0.9
 main: dev.zeeppss.javaessentials.Main
 author: Zeeppss
 
@@ -54,3 +54,7 @@ commands:
     description: Give it a smite.
   lightning:
     description: Give it a smite.
+  suicide:
+    description: Kill yourself.
+  help:
+    description: List Commands.

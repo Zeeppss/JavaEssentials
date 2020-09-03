@@ -39,7 +39,7 @@ public class SmiteCMD implements CommandExecutor {
                             Player targetplayer = p.getServer().getPlayer(args[0]);
                             location = targetplayer.getLocation();
                             world.strikeLightning(location);
-                            p.sendMessage(Main.pre + "§cSmiting " + targetplayer.getDisplayName());
+                            p.sendMessage(Main.pre + "§cSmiting §e" + targetplayer.getDisplayName());
                         } else {
                             p.sendMessage("§cPlayer not found!");
                         }

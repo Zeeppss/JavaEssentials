@@ -15,6 +15,7 @@ public class Main extends JavaPlugin {
     FileConfiguration players;
 
     public static Main instance;
+    public static Main plugin;
 
     public Main() {
     }
@@ -49,6 +50,8 @@ public class Main extends JavaPlugin {
         this.getCommand("js").setExecutor(new JavaEssentialsCMD());
         this.getCommand("smite").setExecutor(new SmiteCMD());
         this.getCommand("lightning").setExecutor(new SmiteCMD());
+        this.getCommand("suicide").setExecutor(new SuicideCMD());
+        this.getCommand("help").setExecutor(new HelpCMD());
         instance = this;
         Bukkit.getPluginManager().registerEvents(new GamemodeManager(), this);
         Bukkit.getPluginManager().registerEvents(new JoinEvent(), this);

@@ -6,6 +6,8 @@ import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
+import org.bukkit.potion.PotionEffect;
+import org.bukkit.potion.PotionEffectType;
 
 public class HealCMD implements CommandExecutor {
     public HealCMD() {
@@ -41,6 +43,8 @@ public class HealCMD implements CommandExecutor {
         p.setFoodLevel(20);
         p.setHealth(20.0D);
         p.setFireTicks(0);
+        for (PotionEffect effect : p.getActivePotionEffects())
+            p.removePotionEffect(effect.getType());
         p.sendMessage(Main.pre + "§aYou have been healed!");
     }
 }

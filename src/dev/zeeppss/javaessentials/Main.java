@@ -2,9 +2,7 @@ package dev.zeeppss.javaessentials;
 
 import dev.zeeppss.javaessentials.commands.*;
 import dev.zeeppss.javaessentials.commands.trolls.*;
-import dev.zeeppss.javaessentials.listeners.FreezeEvent;
-import dev.zeeppss.javaessentials.listeners.JoinEvent;
-import dev.zeeppss.javaessentials.listeners.QuitEvent;
+import dev.zeeppss.javaessentials.listeners.*;
 import dev.zeeppss.javaessentials.managers.GamemodeManager;
 import org.bukkit.Bukkit;
 import org.bukkit.configuration.file.FileConfiguration;
@@ -56,11 +54,17 @@ public class Main extends JavaPlugin {
         this.getCommand("freeze").setExecutor(new FreezeCMD());
         this.getCommand("banish").setExecutor(new BanishCMD());
         this.getCommand("creeper").setExecutor(new CreeperCMD());
+        this.getCommand("nick").setExecutor(new NickCMD());
         instance = this;
         Bukkit.getPluginManager().registerEvents(new GamemodeManager(), this);
         Bukkit.getPluginManager().registerEvents(new JoinEvent(), this);
         Bukkit.getPluginManager().registerEvents(new QuitEvent(), this);
         Bukkit.getPluginManager().registerEvents(new FreezeEvent(), this);
+        Bukkit.getPluginManager().registerEvents(new LightningLoginEvent(), this);
+        this.getConfig().options().copyDefaults(true);
+        this.saveConfig();
+        Bukkit.getServer().getPluginManager().registerEvents(new IpBlockedEvent(), this);
+        Bukkit.getServer().getPluginManager().registerEvents(new NickEvent(), this);
     }
 
     public void onDisable() {

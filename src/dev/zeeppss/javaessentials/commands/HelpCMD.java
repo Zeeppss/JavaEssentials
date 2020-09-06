@@ -47,6 +47,11 @@ public class HelpCMD implements CommandExecutor {
                 p.sendMessage("§a/freeze §7>> §8[§6essentials.freeze§8]");
                 p.sendMessage("§a/banish §7>> §8[§6essentials.banish§8]");
                 p.sendMessage("§a/creeper §7>> §8[§6essentials.creeper§8]");
+                p.sendMessage("§a/nick §7>> §8[§6essentials.nick§8]");
+                p.sendMessage("§a/vanish §7>> §8[§6essentials.vanish§8]");
+                p.sendMessage("§a/v §7>> §8[§6essentials.vanish§8]");
+                p.sendMessage("§a/rename §7>> §8[§6essentials.rename§8]");
+                p.sendMessage("§a/relore §7>> §8[§6essentials.relore§8]");
             } else {
                 p.sendMessage(Main.pre + "§cYou don't have essentials.help permissions!");
             }

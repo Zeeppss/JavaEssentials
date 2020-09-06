@@ -1,6 +1,8 @@
 package dev.zeeppss.javaessentials.commands;
 
 import java.io.File;
+
+import dev.zeeppss.javaessentials.Main;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
@@ -27,7 +29,7 @@ public class NickCMD extends JavaPlugin implements Listener, CommandExecutor {
     public String colorize(String msg) {
         String coloredMsg = "";
 
-        for(int i = 0; i < msg.length(); ++i) {
+        for (int i = 0; i < msg.length(); ++i) {
             if (msg.charAt(i) == '&') {
                 coloredMsg = coloredMsg + '§';
             } else {
@@ -39,31 +41,28 @@ public class NickCMD extends JavaPlugin implements Listener, CommandExecutor {
     }
 
     public boolean onCommand(CommandSender sender, Command cmd, String commandLable, String[] args) {
-        Player p = (Player)sender;
-        if (cmd.getName().equalsIgnoreCase("nick") && p.hasPermission("nick.use")) {
-            if (args.length == 0) {
-                p.sendMessage("§cUsage: /nick [nick]");
-                return true;
-            }
-
-            String nick = this.colorize(args[0] + "§r");
-            int length = this.getConfig().getInt("Nick-Maximum-Length");
-            if (nick.length() > length + 1) {
-                p.sendMessage("§cNick is too long! §8[§e" + length + "§8] §cletters");
-                return true;
-            }
-
-            if (nick.contains(nick)) {
-                p.sendMessage("§cNick's taken!");
-                return true;
-            }
-
-            p.sendMessage("§aNick has updated to:  " + nick);
-            nicks.set(p.getName(), nick);
-            saveNicks();
-            p.setCustomName(nick);
+        Player p = (Player) sender;
+        if (args.length == 0) {
+            p.sendMessage(Main.pre + "§cUsage: /nick [nick]");
+            return true;
         }
 
+        String nick = this.colorize(args[0] + "§r");
+        int length = this.getConfig().getInt("Nick-Maximum-Length");
+        if (nick.length() > length + 1) {
+            p.sendMessage(Main.pre + "§cNick is too long! §8[§e" + length + "§8] §cletters");
+            return true;
+        }
+
+        if (nick.contains(nick)) {
+            p.sendMessage(Main.pre + "§cNick's taken!");
+            return true;
+        }
+
+        p.sendMessage(Main.pre + "§aNick has updated to:  " + nick);
+        nicks.set(p.getName(), nick);
+        saveNicks();
+        p.setCustomName(nick);
         return true;
     }
 }

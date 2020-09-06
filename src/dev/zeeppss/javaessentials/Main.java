@@ -9,7 +9,7 @@ import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.plugin.java.JavaPlugin;
 
 public class Main extends JavaPlugin {
-    public static String pre = "§e[§bJavaEssentials§e] | ";
+    public static String pre = "§e[§3Java§bEssentials§e] | ";
     public static String mbp = "§cPlayer only!";
     public static String np = "§cYou don't have this permissions!";
     FileConfiguration players;
@@ -55,6 +55,10 @@ public class Main extends JavaPlugin {
         this.getCommand("banish").setExecutor(new BanishCMD());
         this.getCommand("creeper").setExecutor(new CreeperCMD());
         this.getCommand("nick").setExecutor(new NickCMD());
+        this.getCommand("vanish").setExecutor(new VanishCMD());
+        this.getCommand("v").setExecutor(new VanishCMD());
+        this.getCommand("rename").setExecutor(new RenameCMD());
+        this.getCommand("relore").setExecutor(new ReloreCMD());
         instance = this;
         Bukkit.getPluginManager().registerEvents(new GamemodeManager(), this);
         Bukkit.getPluginManager().registerEvents(new JoinEvent(), this);

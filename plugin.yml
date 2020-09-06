@@ -1,5 +1,5 @@
 name: JavaEssentials
-version: 1.1.0
+version: 1.1.2
 main: dev.zeeppss.javaessentials.Main
 author: Zeeppss
 
@@ -62,3 +62,5 @@ commands:
     decsription: Banish Troll.
   creeper:
     description: Creeper Troll.
+  nick:
+    description: Nick the player with colours.

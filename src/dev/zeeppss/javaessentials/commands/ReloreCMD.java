@@ -39,7 +39,7 @@ public class ReloreCMD implements CommandExecutor {
                 item.setItemMeta(m);
                 p.sendMessage("§aItem lore has been set to: " + ChatColor.translateAlternateColorCodes('&', allArgs2));
             } else {
-                p.sendMessage(Main.pre + "§cUsage: /relore [name]!");
+                p.sendMessage(Main.pre + "§cUsage: /relore [name]");
             }
         } else {
             p.sendMessage(Main.pre + "§cYou don't have essentials.relore permissions!");

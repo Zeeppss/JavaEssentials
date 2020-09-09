@@ -1,5 +1,5 @@
 name: JavaEssentials
-version: 1.1.3
+version: 1.1.4
 main: dev.zeeppss.javaessentials.Main
 author: Zeeppss
 website: 'https://github.com/Zeeppss/JavaEssentials'
@@ -73,3 +73,17 @@ commands:
     description: Rename items.
   relore:
     description: Relore items.
+  workbench:
+    description: Open Crafting table.
+  wb:
+    description: Open Crafting table.
+  back:
+    description: Go back to where it was before.
+  message:
+    description: Send messages to fellow players.
+  msg:
+    description: Send messages to fellow players.
+  kitop:
+    description: Kit Op with 1k ench levels.
+  kp:
+    description: Kit Op with 1k ench levels.

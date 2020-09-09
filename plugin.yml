@@ -87,3 +87,5 @@ commands:
     description: Kit Op with 1k ench levels.
   kp:
     description: Kit Op with 1k ench levels.
+  repair:
+    descritpion: Repair items.

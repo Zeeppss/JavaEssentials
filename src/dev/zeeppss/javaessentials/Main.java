@@ -59,6 +59,13 @@ public class Main extends JavaPlugin {
         this.getCommand("v").setExecutor(new VanishCMD());
         this.getCommand("rename").setExecutor(new RenameCMD());
         this.getCommand("relore").setExecutor(new ReloreCMD());
+        this.getCommand("workbench").setExecutor(new WorkbenchCMD());
+        this.getCommand("wb").setExecutor(new WorkbenchCMD());
+        this.getCommand("back").setExecutor(new BackCMD());
+        this.getCommand("message").setExecutor(new MessageCMD());
+        this.getCommand("msg").setExecutor(new MessageCMD());
+        this.getCommand("kitop").setExecutor(new KitOpCMD());
+        this.getCommand("kp").setExecutor(new KitOpCMD());
         instance = this;
         Bukkit.getPluginManager().registerEvents(new GamemodeManager(), this);
         Bukkit.getPluginManager().registerEvents(new JoinEvent(), this);
@@ -69,6 +76,7 @@ public class Main extends JavaPlugin {
         this.saveConfig();
         Bukkit.getServer().getPluginManager().registerEvents(new IpBlockedEvent(), this);
         Bukkit.getServer().getPluginManager().registerEvents(new NickEvent(), this);
+        Bukkit.getServer().getPluginManager().registerEvents(new BackEvent(), this);
     }
 
     public void onDisable() {

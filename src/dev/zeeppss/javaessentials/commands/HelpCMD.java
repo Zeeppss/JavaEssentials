@@ -52,6 +52,8 @@ public class HelpCMD implements CommandExecutor {
                 p.sendMessage("§a/back §7>> §8[§6essentials.back§8]");
                 p.sendMessage("§a/message §7>> §8[§6essentials.msg§8]");
                 p.sendMessage("§a/msg §7>> §8[§6essentials.msg§8]");
+                p.sendMessage("§a/repair §7>> §8[§6essentials.repair§8]");
+                p.sendMessage("§a/particle §7>> §8[§6essentials.particle§8]");
                 p.sendMessage("§8==========§aList Troll Commands:§8========== ");
                 p.sendMessage("§a/nuke §7>> §8[§6essentials.nuke§8]");
                 p.sendMessage("§a/freeze §7>> §8[§6essentials.freeze§8]");

@@ -66,6 +66,8 @@ public class Main extends JavaPlugin {
         this.getCommand("msg").setExecutor(new MessageCMD());
         this.getCommand("kitop").setExecutor(new KitOpCMD());
         this.getCommand("kp").setExecutor(new KitOpCMD());
+        this.getCommand("items").setExecutor(new RepairCMD());
+        this.getCommand("particle").setExecutor(new ParticleCMD());
         instance = this;
         Bukkit.getPluginManager().registerEvents(new GamemodeManager(), this);
         Bukkit.getPluginManager().registerEvents(new JoinEvent(), this);

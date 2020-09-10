@@ -1,5 +1,5 @@
 name: JavaEssentials
-version: 1.1.5
+version: 1.1.6
 main: dev.zeeppss.javaessentials.Main
 author: Zeeppss
 website: 'https://github.com/Zeeppss/JavaEssentials'
@@ -59,35 +59,5 @@ commands:
     description: Tnt Rain Troll.
   freeze:
     description: Freeze Troll.
-  banish:
-    decsription: Banish Troll.
   creeper:
     description: Creeper Troll.
-  nick:
-    description: Nick the player with colours.
-  vanish:
-    description: Hiding yourself.
-  v:
-    description: Hiding yourself.
-  rename:
-    description: Rename items.
-  relore:
-    description: Relore items.
-  workbench:
-    description: Open Crafting table.
-  wb:
-    description: Open Crafting table.
-  back:
-    description: Go back to where it was before.
-  message:
-    description: Send messages to fellow players.
-  msg:
-    description: Send messages to fellow players.
-  kitop:
-    description: Kit Op with 1k ench levels.
-  kp:
-    description: Kit Op with 1k ench levels.
-  repair:
-    descritpion: Repair items.
-  particle:
-    description: Give effects particle on yourself.

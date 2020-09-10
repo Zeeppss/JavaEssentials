@@ -1,42 +1,50 @@
 package dev.zeeppss.javaessentials.commands.trolls;
 
-import java.util.HashMap;
-import java.util.Map;
-
 import dev.zeeppss.javaessentials.Main;
+import dev.zeeppss.javaessentials.listeners.FreezeEvent;
 import org.bukkit.Bukkit;
+import org.bukkit.Location;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 
+import java.util.HashMap;
+
 public class FreezeCMD implements CommandExecutor {
     public FreezeCMD() {
     }
 
-    public static Map<Player, Boolean> frozenPlayers = new HashMap();
+    FreezeEvent plugin;
 
+    public HashMap<Player, Location> frozenPlayers = new HashMap<>();
+
+    @SuppressWarnings("deprecation")
+    @Override
     public boolean onCommand(CommandSender sender, Command cmd, String label, String[] args) {
-        if (args.length != 1) {
-            sender.sendMessage("§cUsage: /freeze [player]");
+        if (!(sender instanceof Player)) {
+            sender.sendMessage(Main.pre + "§cPlayer only!");
             return false;
-        } else if (Bukkit.getPlayer(args[0]) != null) {
-            Player target = Bukkit.getPlayer(args[0]);
-            if (target.hasPermission("essentials.freeze")) {
-                target.sendMessage(Main.pre + "§cYou don't have essentials.freeze permissions!");
-                return true;
-            } else if (frozenPlayers.containsKey(target) && (Boolean)frozenPlayers.get(target)) {
-                frozenPlayers.put(target, false);
-                sender.sendMessage(Main.pre + "§e" + target.getName() + " §cis no longer frozen.");
-                return true;
+        }
+        Player p = (Player) sender;
+        if (p.hasPermission("essentials.freeze")) {
+            if (args.length == 1) {
+                String targetName = args[0];
+                if (Bukkit.getOfflinePlayer(targetName).getPlayer() != null) {
+                    Player target = Bukkit.getPlayer(targetName);
+                    if (this.frozenPlayers.containsKey(target)) {
+                        this.frozenPlayers.remove(target);
+                    } else {
+                        this.frozenPlayers.put(target, target.getLocation().clone());
+                    }
+                }
             } else {
-                frozenPlayers.put(target, true);
-                sender.sendMessage(Main.pre + "§c" + target.getName() + " §ais now frozen.");
-                return true;
+                p.sendMessage(Main.pre + "§cUsage: /freeze [player]");
             }
         } else {
-            sender.sendMessage(Main.pre + "§cPlayer not found.");
-            return true;
+            p.sendMessage(Main.pre + "§cYou don't have essentials.freeze permissions!");
         }
+        return false;
     }
 }
+

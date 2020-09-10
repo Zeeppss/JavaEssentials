@@ -15,7 +15,6 @@ public class JavaEssentialsCMD implements CommandExecutor {
         PluginDescriptionFile des = Main.getInstance().getDescription();
         sender.sendMessage("§aCurrently you are using §e[§bJavaEssentials§e] §acreated by §eZeeppss §3" + des.getVersion());
         sender.sendMessage("§aWebsite: §ehttps://github.com/Zeeppss/JavaEssentials");
-
         return true;
     }
 }

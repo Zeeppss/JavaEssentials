@@ -13,7 +13,7 @@ public class SuicideCMD implements CommandExecutor {
 
     public boolean onCommand(CommandSender sender, Command cmd, String label, String[] args) {
         if (!(sender instanceof Player)) {
-            sender.sendMessage("§cPlayer only!");
+            sender.sendMessage(Main.pre + "§cPlayer only!");
         } else {
             Player p = (Player) sender;
             if (p.hasPermission("essentials.suicide")) {

@@ -37,30 +37,13 @@ public class HelpCMD implements CommandExecutor {
                 p.sendMessage("§a/ci §7>> §8[§6essentials.clearinventory§8]");
                 p.sendMessage("§a/invecsee §7>> §8[§6essentials.clearinventory§8]");
                 p.sendMessage("§a/weather §7>> §8[§6essentials.weather§8]");
-                p.sendMessage("§a/message §7>> §8[§6essentials.message§8]");
-                p.sendMessage("§a/msg §7>> §8[§6essentials.message§8]");
                 p.sendMessage("§a/smite §7>> §8[§6essentials.smite§8]");
                 p.sendMessage("§a/lightning §7>> §8[§6essentials.smite§8]");
                 p.sendMessage("§a/suicide §7>> §8[§6essentials.suicide§8]");
-                p.sendMessage("§a/nick §7>> §8[§6essentials.nick§8]");
-                p.sendMessage("§a/vanish §7>> §8[§6essentials.vanish§8]");
-                p.sendMessage("§a/v §7>> §8[§6essentials.vanish§8]");
-                p.sendMessage("§a/rename §7>> §8[§6essentials.rename§8]");
-                p.sendMessage("§a/relore §7>> §8[§6essentials.relore§8]");
-                p.sendMessage("§a/workbench §7>> §8[§6essentials.workbench§8]");
-                p.sendMessage("§a/wb §7>> §8[§6essentials.workbench§8]");
-                p.sendMessage("§a/back §7>> §8[§6essentials.back§8]");
-                p.sendMessage("§a/message §7>> §8[§6essentials.msg§8]");
-                p.sendMessage("§a/msg §7>> §8[§6essentials.msg§8]");
-                p.sendMessage("§a/repair §7>> §8[§6essentials.repair§8]");
-                p.sendMessage("§a/particle §7>> §8[§6essentials.particle§8]");
                 p.sendMessage("§8==========§aList Troll Commands:§8========== ");
                 p.sendMessage("§a/nuke §7>> §8[§6essentials.nuke§8]");
                 p.sendMessage("§a/freeze §7>> §8[§6essentials.freeze§8]");
-                p.sendMessage("§a/banish §7>> §8[§6essentials.banish§8]");
                 p.sendMessage("§a/creeper §7>> §8[§6essentials.creeper§8]");
-                p.sendMessage("§a/kitop §7>> §8[§6essentials.kitop§8]");
-                p.sendMessage("§a/kp §7>> §8[§6essentials.kitop§8]");
             } else {
                 p.sendMessage(Main.pre + "§cYou don't have essentials.help permissions!");
             }

@@ -19,26 +19,26 @@ public class HatCMD implements CommandExecutor {
             sender.sendMessage(Main.pre + "§cPlayer only!");
             return false;
         } else {
-            Player player = (Player) sender;
-            if (player.hasPermission("essentials.hat")) {
+            Player p = (Player) sender;
+            if (p.hasPermission("essentials.hat")) {
                 if (args.length == 0) {
-                    if (player.getInventory().getItemInHand().getType() != Material.AIR) {
-                        ItemStack itemHand = player.getInventory().getItemInHand();
-                        PlayerInventory inventory = player.getInventory();
+                    if (p.getInventory().getItemInHand().getType() != Material.AIR) {
+                        ItemStack itemHand = p.getInventory().getItemInHand();
+                        PlayerInventory inventory = p.getInventory();
                         ItemStack itemHead = inventory.getHelmet();
                         inventory.removeItem(new ItemStack[]{itemHand});
                         inventory.setHelmet(itemHand);
                         inventory.setItemInHand(itemHead);
-                        player.sendMessage(Main.pre + "§aItem successfuly put on your head.");
+                        p.sendMessage(Main.pre + "§aItem successfuly put on your head.");
                         return true;
                     }
-                    player.sendMessage(Main.pre + "§cYou must have something to put on your head!");
+                    p.sendMessage(Main.pre + "§cYou must have something to put on your head!");
                     return true;
                 } else {
-                    player.sendMessage("§cUsage: /hat");
+                    p.sendMessage("§cUsage: /hat");
                 }
             } else {
-                player.sendMessage(Main.pre + "§cYou don't have essentials.hat permissions!");
+                p.sendMessage(Main.pre + "§cYou don't have essentials.hat permissions!");
             }
             return false;
         }

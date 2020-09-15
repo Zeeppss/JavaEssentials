@@ -33,9 +33,11 @@ public class CreeperCMD implements CommandExecutor {
                     target.sendMessage(Main.pre + "§cYou don't have essentials.creeper permissions!");
                 }
                 return false;
+            } else {
+                sender.sendMessage(Main.pre + "§cPlayer not found!");
             }
         } else {
-            sender.sendMessage(Main.pre + "§cPlayer not found!");
+            sender.sendMessage(Main.pre + "§cUsage: /creeper [player]");
             return true;
         }
         return false;

@@ -21,7 +21,7 @@ public class InvseeCMD implements CommandExecutor {
             Player p = (Player) sender;
             if (p.hasPermission("essentials.invsee")) {
                 if (args.length != 1) {
-                    sender.sendMessage(ChatColor.RED + "Usage: /invsee [player]");
+                    sender.sendMessage(Main.pre + "§cUsage: /invsee [player]");
                     return false;
                 }
                 Player target = Bukkit.getPlayer(args[0]);

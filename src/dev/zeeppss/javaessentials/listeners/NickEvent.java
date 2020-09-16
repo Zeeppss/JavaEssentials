@@ -1,21 +1,21 @@
 package dev.zeeppss.javaessentials.listeners;
 
-import org.bukkit.configuration.file.FileConfiguration;
-import org.bukkit.entity.Player;
+import dev.zeeppss.javaessentials.Main;
+import org.bukkit.ChatColor;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
-import org.bukkit.event.player.PlayerJoinEvent;
+import org.bukkit.event.player.AsyncPlayerChatEvent;
 
 public class NickEvent implements Listener {
-
-    public static FileConfiguration nicks;
+    public NickEvent() {
+    }
 
     @EventHandler
-    public void nickOnJoin(PlayerJoinEvent e) {
-        Player p = e.getPlayer();
-        if (nicks.contains(p.getName())) {
-            String nick = nicks.getString(p.getName());
-            p.setCustomName(nick);
+    public void onPlayerChat(AsyncPlayerChatEvent e) {
+        if (Main.getInstance().getConfig().getString(e.getPlayer().getName()) != null) {
+            e.getPlayer().setDisplayName(Main.getInstance().getConfig().getString(e.getPlayer().getName()) + ChatColor.RESET);
         }
+
     }
 }
+

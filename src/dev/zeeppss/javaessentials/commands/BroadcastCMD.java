@@ -21,6 +21,7 @@ public class BroadcastCMD implements CommandExecutor {
             if (p.hasPermission("essentials.broadcast")) {
                 if (args.length == 0) {
                     sender.sendMessage(Main.pre + "§cUsage: /broadcast [message]");
+                    sender.sendMessage(Main.pre + "§cUsage: /bc [message]");
                     return true;
                 }
 

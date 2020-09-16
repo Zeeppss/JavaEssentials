@@ -1,7 +1,7 @@
 package dev.zeeppss.javaessentials.commands;
 
 import dev.zeeppss.javaessentials.Main;
-import org.bukkit.ChatColor;
+import org.bukkit.Location;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
@@ -13,22 +13,22 @@ public class WorkbenchCMD implements CommandExecutor {
 
     public boolean onCommand(CommandSender sender, Command cmd, String label, String[] args) {
         if (!(sender instanceof Player)) {
-            sender.sendMessage("§cPlayer only!");
-            return false;
-        }
-        if (args.length == 0) {
-            Player p = (Player) sender;
-            if (p.hasPermission("essentials.workbench")) {
-                ((Player) sender).openWorkbench(((Player) sender).getLocation(), true);
-                sender.sendMessage(Main.pre + "§aOpened Crafting Table");
-                return true;
-            } else {
-                p.sendMessage(Main.pre + "§cYou don't have essentials.workbench permissions!");
-            }
+            sender.sendMessage(Main.pre + "§cPlayer only!");
             return false;
         } else {
-            sender.sendMessage(ChatColor.RED + "Usage: /workbench");
+            Player p = (Player)sender;
+            if (p.hasPermission("essentials.wb")) {
+                if (args.length == 0) {
+                    p.openWorkbench((Location)null, true);
+                    p.sendMessage(Main.pre + "§aOpened Workbench!");
+                } else {
+                    p.sendMessage(Main.pre + "§cUsage: /workbench");
+                    p.sendMessage(Main.pre + "§cUsage: /wb");
+                }
+            } else {
+                p.sendMessage(Main.pre + "§cYou don't have essentials.workbench permissions");
+            }
+            return false;
         }
-        return false;
     }
 }

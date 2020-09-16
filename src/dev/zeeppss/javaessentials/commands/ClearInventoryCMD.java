@@ -24,22 +24,21 @@ public class ClearInventoryCMD implements CommandExecutor {
         if (!p.hasPermission("essentials.clearinventory")) {
             if (args.length == 0) {
                 p.getInventory().clear();
-                p.updateInventory();
-                p.sendMessage(Main.pre + "§cYou cleared your inventory");
-                return false;
+                sender.sendMessage(Main.pre + "§aInventory cleared!");
+                return true;
             } else {
-                sender.sendMessage(Main.pre + "§cUsage: /ci [player]");
-                Player t = Bukkit.getPlayer(args[0]);
-                if (!p.hasPermission("essentials.clearinventory.others")) {
-                    p.sendMessage(Main.pre + "§cYou don't have essentials.clearinventory.others permissions!");
-                    return false;
+                p.sendMessage(Main.pre + "§cUsage: /ci [player]");
+                p.sendMessage(Main.pre + "§cUsage: /clearinventory [player]");
+                Player target = Bukkit.getServer().getPlayer(args[0]);
+                if (target == null) {
+                    p.sendMessage(Main.pre + "§cPlayer not found!");
+                    return true;
                 } else {
-                    t.getInventory().clear();
-                    t.updateInventory();
-                    p.sendMessage(Main.pre + "You cleared the §e" + t.getDisplayName() + " §ainventory");
-                    t.sendMessage(Main.pre + "§c" + t.getDisplayName() + "cleaned" + p.getDisplayName());
+                    target.getInventory().clear();
+                    target.sendMessage(Main.pre + "§aYour inventory has been cleared!");
+                    p.sendMessage(Main.pre + target.getName() + " Inventory was successfully cleared!");
+                    return false;
                 }
-                return false;
             }
         } else {
             p.sendMessage(Main.pre + "§cYou don't have essentials.clearinventory permissions!");

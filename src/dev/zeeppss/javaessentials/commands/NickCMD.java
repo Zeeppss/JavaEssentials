@@ -1,69 +1,46 @@
 package dev.zeeppss.javaessentials.commands;
 
-import java.io.File;
-
 import dev.zeeppss.javaessentials.Main;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
-import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.entity.Player;
-import org.bukkit.event.Listener;
-import org.bukkit.plugin.java.JavaPlugin;
 
-public class NickCMD extends JavaPlugin implements Listener, CommandExecutor {
+public class NickCMD implements CommandExecutor {
     public NickCMD() {
     }
 
-    public static File nickFile;
-    public static FileConfiguration nicks;
+    public boolean onCommand(CommandSender sender, Command cmd, String label, String[] args) {
+        if (!(sender instanceof Player)) {
+            sender.sendMessage(Main.pre + "§cPlayer only!");
+            return false;
+        } else {
+            Player p = (Player) sender;
+            if (p.hasPermission("essentials.nick")) {
+                if (args.length == 0) {
+                    p.sendMessage(Main.pre + "§cUsage: /nick [nickname]");
+                    return true;
+                } else {
+                    String nick = "";
+                    String[] var10 = args;
+                    int var9 = args.length;
 
-    public static void saveNicks() {
-        try {
-            nicks.save(nickFile);
-        } catch (Exception var1) {
-        }
+                    for (int var8 = 0; var8 < var9; ++var8) {
+                        String arg = var10[var8];
+                        nick = nick + arg + " ";
+                    }
 
-    }
-
-    public String colorize(String msg) {
-        String coloredMsg = "";
-
-        for (int i = 0; i < msg.length(); ++i) {
-            if (msg.charAt(i) == '&') {
-                coloredMsg = coloredMsg + '§';
+                    nick = nick.substring(0, nick.length() - 1);
+                    nick = nick.replaceAll("&", "§");
+                    p.sendMessage(Main.pre + "§aYou have changed your nickname to " + "§c" + nick);
+                    Main.getInstance().getConfig().set(p.getName(), nick);
+                    Main.getInstance().saveConfig();
+                    return true;
+                }
             } else {
-                coloredMsg = coloredMsg + msg.charAt(i);
+                p.sendMessage(Main.pre + "§cYou don't have essentials.nick permissions!");
             }
+            return false;
         }
-
-        return coloredMsg;
-    }
-
-    public boolean onCommand(CommandSender sender, Command cmd, String commandLable, String[] args) {
-        Player p = (Player) sender;
-        if (args.length == 0) {
-            p.sendMessage(Main.pre + "§cUsage: /nick [nick]");
-            return true;
-        }
-
-        String nick = this.colorize(args[0] + "§r");
-        int length = this.getConfig().getInt("Nick-Maximum-Length");
-        if (nick.length() > length + 1) {
-            p.sendMessage(Main.pre + "§cNick is too long! §8[§e" + length + "§8] §cletters");
-            return true;
-        }
-
-        if (nick.contains(nick)) {
-            p.sendMessage(Main.pre + "§cNick's taken!");
-            return true;
-        }
-
-        p.sendMessage(Main.pre + "§aNick has updated to:  " + nick);
-        nicks.set(p.getName(), nick);
-        saveNicks();
-        p.setCustomName(nick);
-        return true;
     }
 }
-

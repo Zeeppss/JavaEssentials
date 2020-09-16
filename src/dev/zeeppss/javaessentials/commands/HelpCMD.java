@@ -40,6 +40,13 @@ public class HelpCMD implements CommandExecutor {
                 p.sendMessage("§a/smite §7>> §8[§6essentials.smite§8]");
                 p.sendMessage("§a/lightning §7>> §8[§6essentials.smite§8]");
                 p.sendMessage("§a/suicide §7>> §8[§6essentials.suicide§8]");
+                p.sendMessage("§a/exp §7>> §8[§6essentials.exp§8]");
+                p.sendMessage("§a/ip §7>> §8[§6essentials.ip§8]");
+                p.sendMessage("§a/speed §7>> §8[§6essentials.speed§8]");
+                p.sendMessage("§a/flyspeed §7>> §8[§6essentials.flyspeed§8]");
+                p.sendMessage("§a/workbench §7>> §8[§6essentials.wb§8]");
+                p.sendMessage("§a/wb §7>> §8[§6essentials.wb§8]");
+                p.sendMessage("§a/nick §7>> §8[§6essentials.nick§8]");
                 p.sendMessage("§8==========§aList Troll Commands:§8========== ");
                 p.sendMessage("§a/nuke §7>> §8[§6essentials.nuke§8]");
                 p.sendMessage("§a/freeze §7>> §8[§6essentials.freeze§8]");

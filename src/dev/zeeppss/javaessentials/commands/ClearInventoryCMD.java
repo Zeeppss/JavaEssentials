@@ -1,7 +1,6 @@
 package dev.zeeppss.javaessentials.commands;
 
 import dev.zeeppss.javaessentials.Main;
-import org.bukkit.Bukkit;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
@@ -21,24 +20,14 @@ public class ClearInventoryCMD implements CommandExecutor {
             return false;
         }
         Player p = (Player) sender;
-        if (!p.hasPermission("essentials.clearinventory")) {
+        if (p.hasPermission("essentials.clearinventory")) {
             if (args.length == 0) {
                 p.getInventory().clear();
-                sender.sendMessage(Main.pre + "§aInventory cleared!");
-                return true;
+                p.getInventory().setArmorContents(null);
+                p.sendMessage(Main.pre + "§aYour inventory has been cleared!");
             } else {
-                p.sendMessage(Main.pre + "§cUsage: /ci [player]");
-                p.sendMessage(Main.pre + "§cUsage: /clearinventory [player]");
-                Player target = Bukkit.getServer().getPlayer(args[0]);
-                if (target == null) {
-                    p.sendMessage(Main.pre + "§cPlayer not found!");
-                    return true;
-                } else {
-                    target.getInventory().clear();
-                    target.sendMessage(Main.pre + "§aYour inventory has been cleared!");
-                    p.sendMessage(Main.pre + target.getName() + " Inventory was successfully cleared!");
-                    return false;
-                }
+                p.sendMessage(Main.pre + "§cUsage: /clearinventory");
+                p.sendMessage(Main.pre + "§cUsage: /ci");
             }
         } else {
             p.sendMessage(Main.pre + "§cYou don't have essentials.clearinventory permissions!");
@@ -46,4 +35,3 @@ public class ClearInventoryCMD implements CommandExecutor {
         return false;
     }
 }
-

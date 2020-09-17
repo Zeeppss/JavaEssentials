@@ -19,8 +19,6 @@ commands:
     description: Heal yourself or others.
   kick:
     description: Kick a player with reason.
-  ban:
-    description: Banned a player with reason.
   broadcast:
     description: Cheers a text to everyone.
   bc:

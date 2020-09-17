@@ -32,7 +32,6 @@ public class Main extends JavaPlugin {
         this.getCommand("gm").setExecutor(new GamemodeCMD());
         this.getCommand("heal").setExecutor(new HealCMD());
         this.getCommand("kick").setExecutor(new KickCMD());
-        this.getCommand("ban").setExecutor(new BanCMD());
         this.getCommand("broadcast").setExecutor(new BroadcastCMD());
         this.getCommand("bc").setExecutor(new BroadcastCMD());
         this.getCommand("afk").setExecutor(new AfkCMD());

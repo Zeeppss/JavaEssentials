@@ -23,9 +23,8 @@ public class HelpCMD implements CommandExecutor {
                 p.sendMessage("§a/fly §7>> §8[§6essentials.fly§8]");
                 p.sendMessage("§a/gamemode §7>> §8[§6essentials.gamemode§8]");
                 p.sendMessage("§a/gm §7>> §8[§6essentials.gamemode§8]");
-                p.sendMessage("§a/heal §7>> §8[§6essentials.heal§8]");
+                p.sendMessage( "§a/heal §7>> §8[§6essentials.heal§8]");
                 p.sendMessage("§a/kick §7>> §8[§6essentials.kick§8]");
-                p.sendMessage("§a/ban §7>> §8[§6essentials.ban§8]");
                 p.sendMessage("§a/broadcast §7>> §8[§6essentials.broadcast§8]");
                 p.sendMessage("§a/bc §7>> §8[§6essentials.broadcast§8]");
                 p.sendMessage("§a/afk §7>> §8[§6essentials.afk§8]");
@@ -40,7 +39,6 @@ public class HelpCMD implements CommandExecutor {
                 p.sendMessage("§a/smite §7>> §8[§6essentials.smite§8]");
                 p.sendMessage("§a/lightning §7>> §8[§6essentials.smite§8]");
                 p.sendMessage("§a/suicide §7>> §8[§6essentials.suicide§8]");
-                p.sendMessage("§a/exp §7>> §8[§6essentials.exp§8]");
                 p.sendMessage("§a/ip §7>> §8[§6essentials.ip§8]");
                 p.sendMessage("§a/speed §7>> §8[§6essentials.speed§8]");
                 p.sendMessage("§a/flyspeed §7>> §8[§6essentials.flyspeed§8]");

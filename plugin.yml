@@ -1,5 +1,5 @@
 name: JavaEssentials
-version: 1.1.8
+version: 1.1.9
 main: dev.zeeppss.javaessentials.Main
 author: Zeeppss
 website: 'https://github.com/Zeeppss/JavaEssentials'
@@ -55,8 +55,6 @@ commands:
     description: List Commands.
   nuke:
     description: Tnt Rain Troll.
-  freeze:
-    description: Freeze Troll.
   creeper:
     description: Creeper Troll.
   ip:
@@ -71,3 +69,7 @@ commands:
     description: Opened craftingtable.
   nick:
     description: Change nickname with colours prefix.
+  repair:
+    description: Fixed your items.
+  blind:
+    description: Give blindness to player.

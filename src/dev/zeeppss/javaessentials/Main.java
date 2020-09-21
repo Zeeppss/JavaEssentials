@@ -50,7 +50,6 @@ public class Main extends JavaPlugin {
         this.getCommand("suicide").setExecutor(new SuicideCMD());
         this.getCommand("help").setExecutor(new HelpCMD());
         this.getCommand("nuke").setExecutor(new NukeCMD());
-        this.getCommand("freeze").setExecutor(new FreezeCMD());
         this.getCommand("creeper").setExecutor(new CreeperCMD());
         this.getCommand("ip").setExecutor(new IpCMD());
         this.getCommand("speed").setExecutor(new SpeedCMD());
@@ -58,11 +57,12 @@ public class Main extends JavaPlugin {
         this.getCommand("workbench").setExecutor(new WorkbenchCMD());
         this.getCommand("wb").setExecutor(new WorkbenchCMD());
         this.getCommand("nick").setExecutor(new NickCMD());
+        this.getCommand("repair").setExecutor(new RepairCMD());
+        this.getCommand("blind").setExecutor(new BlindCMD());
         instance = this;
         Bukkit.getPluginManager().registerEvents(new GamemodeManager(), this);
         Bukkit.getPluginManager().registerEvents(new JoinEvent(), this);
         Bukkit.getPluginManager().registerEvents(new QuitEvent(), this);
-        Bukkit.getPluginManager().registerEvents(new FreezeEvent(), this);
         Bukkit.getPluginManager().registerEvents(new LightningLoginEvent(), this);
         Bukkit.getPluginManager().registerEvents(new NickEvent(), this);
         this.getConfig().options().copyDefaults(true);

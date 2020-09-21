@@ -1,6 +1,7 @@
 package dev.zeeppss.javaessentials.commands;
 
 import dev.zeeppss.javaessentials.Main;
+import com.sun.istack.internal.NotNull;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
@@ -10,34 +11,25 @@ public class RepairCMD implements CommandExecutor {
     public RepairCMD() {
     }
 
-    public boolean onCommand(CommandSender sender, Command arg1, String arg2, String[] args) {
+    @Deprecated
+    @NotNull
+    public boolean onCommand(CommandSender sender, Command cmd, String label, String[] args) {
         if (!(sender instanceof Player)) {
             sender.sendMessage("§cPlayer only!");
             return false;
         }
-        Player p = (Player)sender;
+        Player p = (Player) sender;
         if (p.hasPermission("essentials.repair")) {
-            if (args.length != 0) {
-                return false;
+            if (args.length == 0) {
+                p.getItemInHand().setDurability((short) 0);
+                p.sendMessage(Main.pre + "§aThe item has been repaired!");
+                return true;
             } else {
-                try {
-                    if (p.getItemInHand().getDurability() == 0) {
-                        p.sendMessage(Main.pre + "§cRepair failed!");
-                        return true;
-                    } else {
-                        p.getItemInHand().setDurability((short)0);
-                        p.sendMessage(Main.pre + "§cRepair worked!");
-                        return true;
-                    }
-                } catch (Exception var7) {
-                    p.sendMessage(Main.pre + "§cRepair failed!");
-                    return true;
-                }
+                p.sendMessage(Main.pre + "§cUsage: /repair");
             }
         } else {
             p.sendMessage(Main.pre + "§cYou don't have essentials.repair permissions!");
-            return false;
         }
+        return false;
     }
 }
-

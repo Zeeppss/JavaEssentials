@@ -3,5 +3,5 @@ This is an essential plugin that uses java language and this plugin is very easy
 
 **This is just plain code and pure import from java, so you can see this code to copy and study in your own style.**
 
-**JavaEssentials** resembles `EssentialsX`
+**JavaEssentials** resembles `EssentialsX` :)
 

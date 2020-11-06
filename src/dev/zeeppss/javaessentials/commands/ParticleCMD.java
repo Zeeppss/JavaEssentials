@@ -24,7 +24,7 @@ public class ParticleCMD extends JavaPlugin implements CommandExecutor {
     private String[] effects = { "flames", "hearts", "happyvillager" };
 
     public String[] commands = { "/particle set <effect> [Set a particle effect on yourself]",
-            "/particle list [Display all available effects]", "/particle remove [Remove the current effect]" };
+            "/particle list [list-effects]", "/particle remove [remove-effects]" };
 
     public static Plugin getInstance() {
         return instance;

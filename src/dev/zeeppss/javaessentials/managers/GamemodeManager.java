@@ -9,10 +9,10 @@ import org.bukkit.entity.Player;
 import org.bukkit.event.Listener;
 
 public class GamemodeManager implements Listener {
-    static List<String> gm0 = new ArrayList(Arrays.asList("0", "survival", "survival"));
-    static List<String> gm1 = new ArrayList(Arrays.asList("1", "creative", "creative"));
-    static List<String> gm2 = new ArrayList(Arrays.asList("2", "adventure", "adventure"));
-    static List<String> gm3 = new ArrayList(Arrays.asList("3", "spectator", "spectator"));
+    static List<String> gm0 = new ArrayList(Arrays.asList("0", "survival", "s"));
+    static List<String> gm1 = new ArrayList(Arrays.asList("1", "creative", "c"));
+    static List<String> gm2 = new ArrayList(Arrays.asList("2", "adventure", "a"));
+    static List<String> gm3 = new ArrayList(Arrays.asList("3", "spectator", "s"));
 
     public GamemodeManager() {
     }
@@ -44,7 +44,7 @@ public class GamemodeManager implements Listener {
                 player.setGameMode(GameMode.SPECTATOR);
                 player.sendMessage(Main.pre + "§aYour gamemode has been changed to §8[§e" + player.getGameMode() + "§8]");
             } else {
-                player.sendMessage(Main.pre + "§cYou don't have essentials.gamemode permissions!");
+                 player.sendMessage(Main.pre + "§cYou don't have essentials.gamemode permissions!");
             }
         } else {
             player.sendMessage(Main.pre + "§cGamemode not found!");

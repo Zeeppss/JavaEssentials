@@ -63,7 +63,7 @@ public class Main extends JavaPlugin {
         Bukkit.getPluginManager().registerEvents(new GamemodeManager(), this);
         Bukkit.getPluginManager().registerEvents(new JoinEvent(), this);
         Bukkit.getPluginManager().registerEvents(new QuitEvent(), this);
-        Bukkit.getPluginManager().registerEvents(new LightningLoginEvent(), this);
+        Bukkit.getPluginManager().registerEvents(new ThorJoinEvent(), this);
         Bukkit.getPluginManager().registerEvents(new NickEvent(), this);
         this.getConfig().options().copyDefaults(true);
         this.saveConfig();

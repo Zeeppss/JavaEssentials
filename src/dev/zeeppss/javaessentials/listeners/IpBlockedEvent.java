@@ -18,7 +18,7 @@ public class IpBlockedEvent extends JavaPlugin implements Listener {
             String word = var5[var3];
             if (this.getConfig().getStringList("ipblocked").contains(word)) {
                 e.setCancelled(true);
-                e.getPlayer().sendMessage("" + "§cPlease don't advertise other ip address here!");
+                e.getPlayer().sendMessage("" + "§cPlease Don't Advertise Other IP Addresses Here!");
             }
         }
 

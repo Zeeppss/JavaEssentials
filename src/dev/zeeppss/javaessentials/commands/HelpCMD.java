@@ -38,6 +38,7 @@ public class HelpCMD implements CommandExecutor {
                 p.sendMessage("§a/weather §7>> §8[§6essentials.weather§8]");
                 p.sendMessage("§a/smite §7>> §8[§6essentials.smite§8]");
                 p.sendMessage("§a/lightning §7>> §8[§6essentials.smite§8]");
+                p.sendMessage("§a/kill §7>> §8[§6essentials.kill§8]");
                 p.sendMessage("§a/suicide §7>> §8[§6essentials.suicide§8]");
                 p.sendMessage("§a/ip §7>> §8[§6essentials.ip§8]");
                 p.sendMessage("§a/speed §7>> §8[§6essentials.speed§8]");
@@ -46,6 +47,7 @@ public class HelpCMD implements CommandExecutor {
                 p.sendMessage("§a/wb §7>> §8[§6essentials.wb§8]");
                 p.sendMessage("§a/nick §7>> §8[§6essentials.nick§8]");
                 p.sendMessage("§a/repair §7>> §8[§6essentials.repair§8]");
+                p.sendMessage("§a/give §7>> §8[§6essentials.give§8]");
                 p.sendMessage("§8==========§aList Troll Commands:§8========== ");
                 p.sendMessage("§a/nuke §7>> §8[§6essentials.nuke§8]");
                 p.sendMessage("§a/creeper §7>> §8[§6essentials.creeper§8]");

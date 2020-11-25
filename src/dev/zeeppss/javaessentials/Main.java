@@ -5,13 +5,18 @@ import dev.zeeppss.javaessentials.commands.trolls.*;
 import dev.zeeppss.javaessentials.listeners.*;
 import dev.zeeppss.javaessentials.managers.GamemodeManager;
 import org.bukkit.Bukkit;
+import org.bukkit.Location;
 import org.bukkit.configuration.file.FileConfiguration;
+import org.bukkit.entity.Player;
 import org.bukkit.plugin.java.JavaPlugin;
+
+import java.util.HashMap;
 
 public class Main extends JavaPlugin {
     public static String pre = "§e[§3Java§bEssentials§e] | ";
     public static String mbp = "§cPlayer only!";
     public static String np = "§cYou don't have this permissions!";
+    public HashMap<Player, Location> lastLogins = new HashMap<>();
     FileConfiguration players;
 
     public static Main instance;
@@ -47,6 +52,7 @@ public class Main extends JavaPlugin {
         this.getCommand("js").setExecutor(new JavaEssentialsCMD());
         this.getCommand("smite").setExecutor(new SmiteCMD());
         this.getCommand("lightning").setExecutor(new SmiteCMD());
+        this.getCommand("kill").setExecutor(new KillCMD());
         this.getCommand("suicide").setExecutor(new SuicideCMD());
         this.getCommand("help").setExecutor(new HelpCMD());
         this.getCommand("nuke").setExecutor(new NukeCMD());
@@ -59,11 +65,12 @@ public class Main extends JavaPlugin {
         this.getCommand("nick").setExecutor(new NickCMD());
         this.getCommand("repair").setExecutor(new RepairCMD());
         this.getCommand("blind").setExecutor(new BlindCMD());
+        this.getCommand("give").setExecutor(new GiveCMD());
         instance = this;
         Bukkit.getPluginManager().registerEvents(new GamemodeManager(), this);
         Bukkit.getPluginManager().registerEvents(new JoinEvent(), this);
         Bukkit.getPluginManager().registerEvents(new QuitEvent(), this);
-        Bukkit.getPluginManager().registerEvents(new ThorJoinEvent(), this);
+        Bukkit.getPluginManager().registerEvents(new LightningLoginEvent(), this);
         Bukkit.getPluginManager().registerEvents(new NickEvent(), this);
         this.getConfig().options().copyDefaults(true);
         this.saveConfig();

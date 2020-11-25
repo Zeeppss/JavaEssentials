@@ -1,5 +1,5 @@
 name: JavaEssentials
-version: 1.1.9
+version: 1.2.0
 main: dev.zeeppss.javaessentials.Main
 author: Zeeppss
 website: 'https://github.com/Zeeppss/JavaEssentials'
@@ -49,6 +49,8 @@ commands:
     description: Give it a smite.
   lightning:
     description: Give it a smite.
+  kill:
+    description: Killed target players.
   suicide:
     description: Kill yourself.
   help:
@@ -73,3 +75,5 @@ commands:
     description: Fixed your items.
   blind:
     description: Give blindness to player.
+  give:
+    description: Give item to player.
